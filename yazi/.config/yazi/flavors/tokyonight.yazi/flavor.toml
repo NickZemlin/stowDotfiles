@@ -1,0 +1,214 @@
+# Tokyo Night (night) flavor for Yazi
+# Palette matches folke/tokyonight.nvim "tokyonight-night"
+
+[app]
+overall = { bg = "#1a1b26" }
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "#7aa2f7" }
+
+# Find
+find_keyword  = { fg = "#e0af68", bold = true, italic = true, underline = true }
+find_position = { fg = "#bb9af7", bg = "reset", bold = true, italic = true }
+
+# Symlink
+symlink_target = { fg = "#7dcfff", italic = true }
+
+# Marker
+marker_copied   = { fg = "#9ece6a",  bg = "#9ece6a" }
+marker_cut      = { fg = "#f7768e",  bg = "#f7768e" }
+marker_marked   = { fg = "#7dcfff",  bg = "#7dcfff" }
+marker_selected = { fg = "#e0af68",  bg = "#e0af68" }
+marker_symbol   = "│"
+
+# Count
+count_copied   = { fg = "#1a1b26", bg = "#9ece6a" }
+count_cut      = { fg = "#1a1b26", bg = "#f7768e" }
+count_selected = { fg = "#1a1b26", bg = "#e0af68" }
+
+# Border
+border_symbol = "│"
+border_style  = { fg = "#3b4261" }
+
+# : }}}
+
+# : Tabs {{{
+
+[tabs]
+active   = { bg = "#7aa2f7", fg = "#1a1b26", bold = true }
+inactive = { fg = "#565f89", bg = "#16161e" }
+
+# Separator
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+# : }}}
+
+# : Mode {{{
+
+[mode]
+normal_main = { bg = "#7aa2f7", fg = "#1a1b26", bold = true }
+normal_alt  = { fg = "#7aa2f7", bg = "#16161e" }
+
+# Select mode
+select_main = { bg = "#f7768e", fg = "#1a1b26", bold = true }
+select_alt  = { fg = "#f7768e", bg = "#16161e" }
+
+# Unset mode
+unset_main = { bg = "#f7768e", fg = "#1a1b26", bold = true }
+unset_alt  = { fg = "#f7768e", bg = "#16161e" }
+
+# : }}}
+
+# : Indicator of hovered file {{{
+
+[indicator]
+parent  = { bg = "#292e42" }
+current = { bg = "#292e42" }
+preview = { underline = true }
+padding = { open = "", close = "" }
+
+# : }}}
+
+# : Status bar {{{
+
+[status]
+overall   = { bg = "#16161e" }
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_sep   = { fg = "#565f89" }
+perm_type  = { fg = "#9ece6a" }
+perm_read  = { fg = "#e0af68" }
+perm_write = { fg = "#f7768e" }
+perm_exec  = { fg = "#7dcfff" }
+
+# Progress
+progress_label  = { bold = true }
+progress_normal = { fg = "#9ece6a", bg = "#1a1b26" }
+progress_error  = { fg = "#e0af68", bg = "#f7768e" }
+
+# : }}}
+
+# : Which {{{
+
+[which]
+border          = { fg = "#7aa2f7" }
+cols            = 3
+mask            = { bg = "#1a1b26" }
+cand            = { fg = "#7dcfff" }
+rest            = { fg = "#565f89" }
+desc            = { fg = "#bb9af7" }
+separator_style = { fg = "#565f89" }
+
+# : }}}
+
+# : Confirmation {{{
+
+[confirm]
+border     = { fg = "#7aa2f7" }
+title      = { fg = "#7aa2f7" }
+body       = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# : }}}
+
+# : Spotter {{{
+
+[spot]
+border = { fg = "#7aa2f7" }
+title  = { fg = "#7aa2f7" }
+
+# Table
+tbl_col  = { fg = "#7aa2f7" }
+tbl_cell = { fg = "#e0af68", reversed = true }
+
+# : }}}
+
+# : Notification {{{
+
+[notify]
+title_info  = { fg = "#9ece6a" }
+title_warn  = { fg = "#e0af68" }
+title_error = { fg = "#f7768e" }
+
+# : }}}
+
+# : Picker {{{
+
+[pick]
+border   = { fg = "#7aa2f7" }
+active   = { fg = "#bb9af7", bold = true }
+inactive = {}
+
+# : }}}
+
+# : Input {{{
+
+[input]
+border   = { fg = "#7aa2f7" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+# : Completion {{{
+
+[cmp]
+border   = { fg = "#7aa2f7" }
+active   = { reversed = true }
+inactive = {}
+
+# : }}}
+
+# : Task manager {{{
+
+[tasks]
+border  = { fg = "#7aa2f7" }
+title   = {}
+hovered = { fg = "#bb9af7", bold = true }
+
+# : }}}
+
+# : Help menu {{{
+
+[help]
+border  = { fg = "#7aa2f7" }
+chord   = { fg = "#7dcfff" }
+action  = { fg = "#bb9af7" }
+hovered = { reversed = true, bold = true }
+
+# : }}}
+
+# : File-specific styles {{{
+
+[filetype]
+rules = [
+	# Image
+	{ mime = "**/image/*", fg = "#e0af68" },
+	# Media
+	{ mime = "**/{audio,video}/*", fg = "#bb9af7" },
+	# Archive
+	{ mime = "**/application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f7768e" },
+	# Document
+	{ mime = "**/application/{pdf,doc,rtf}", fg = "#7dcfff" },
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#565f89" },
+	# Special file
+	{ url = "*", is = "orphan", bg = "#f7768e" },
+	{ url = "*", is = "exec"  , fg = "#9ece6a" },
+	# Dummy file
+	{ url = "*", is = "dummy", bg = "#f7768e" },
+	{ url = "*/", is = "dummy", bg = "#f7768e" },
+	# Fallback
+	{ url = "*/", fg = "#7aa2f7" }
+]
+
+# : }}}
