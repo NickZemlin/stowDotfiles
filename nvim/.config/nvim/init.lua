@@ -89,6 +89,7 @@ local plugins = {
 	-- Development Tools
 	{ "https://github.com/akinsho/toggleterm.nvim", "toggleterm.nvim" },
 	{ "https://github.com/lewis6991/gitsigns.nvim", "gitsigns.nvim" },
+	{ "https://github.com/moyiz/git-dev.nvim", "git-dev.nvim" },
 	{ "https://github.com/MagicDuck/grug-far.nvim", "grug-far.nvim" },
 
 	-- Quality Tools
