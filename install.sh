@@ -12,7 +12,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 TARGET="$HOME"
-PACKAGES=(nvim yazi tmux fastfetch)
+PACKAGES=(nvim yazi tmux fastfetch ghostty)
 
 if ! command -v stow >/dev/null 2>&1; then
   echo "error: GNU stow is not installed." >&2

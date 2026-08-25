@@ -1,0 +1,4 @@
+theme = TokyoNight Moon
+background-opacity = 0.90
+background-blur = 20
+custom-shader = ~/.config/ghostty/shaders/bloom.glsl

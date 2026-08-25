@@ -11,6 +11,7 @@ nvim/       Neovim config      (.config/nvim)
 yazi/       Yazi config        (.config/yazi)
 tmux/       tmux config        (.config/tmux)
 fastfetch/  fastfetch config   (.config/fastfetch)
+ghostty/    Ghostty config     (.config/ghostty)
 ```
 
 ## Requirements
@@ -23,7 +24,7 @@ fastfetch/  fastfetch config   (.config/fastfetch)
 cd ~/dotfiles && ./install.sh
 ```
 
-This symlinks `~/.config/{nvim,yazi,tmux,fastfetch}` to the corresponding
+This symlinks `~/.config/{nvim,yazi,tmux,fastfetch,ghostty}` to the corresponding
 directories here. Re-running is safe (idempotent).
 
 To unlink:
