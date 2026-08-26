@@ -37,7 +37,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
   vec4 color = texture(iChannel0, uv);
 
-  vec2 step = vec2(0.25) / iResolution.xy;
+  vec2 step = vec2(0.30) / iResolution.xy;
 
   for (int i = 0; i < 24; i++) {
     vec3 s = samples[i];
