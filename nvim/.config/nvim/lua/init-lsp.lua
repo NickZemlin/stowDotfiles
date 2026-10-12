@@ -36,6 +36,18 @@ vim.lsp.config('*', {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
+-- Inlay hints for Zig: show argument/parameter names inline (via zls)
+vim.api.nvim_create_autocmd('LspAttach', {
+    desc = 'Enable inlay hints for zls',
+    group = vim.api.nvim_create_augroup('zig-inlay-hints', { clear = true }),
+    callback = function(event)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client.name == 'zls' then
+            vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+        end
+    end,
+})
+
 -- Load individual LSP configurations
 local dir_path = vim.fn.stdpath("config") .. "/lua/plugins/lsps"
 for _, file in ipairs(vim.fn.readdir(dir_path, [[v:val =~ '\.lua$']])) do

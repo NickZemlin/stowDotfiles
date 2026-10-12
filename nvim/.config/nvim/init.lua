@@ -85,6 +85,7 @@ local plugins = {
 	{ "https://github.com/hrsh7th/cmp-nvim-lsp", "cmp-nvim-lsp" },
 	{ "https://github.com/hrsh7th/cmp-buffer", "cmp-buffer" },
 	{ "https://github.com/hrsh7th/cmp-path", "cmp-path" },
+	{ "https://github.com/ray-x/lsp_signature.nvim", "lsp_signature.nvim" },
 
 	-- Development Tools
 	{ "https://github.com/akinsho/toggleterm.nvim", "toggleterm.nvim" },

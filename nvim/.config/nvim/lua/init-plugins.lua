@@ -25,6 +25,7 @@ require("plugins.markview")
 
 -- Load completion
 require("plugins.nvim-cmp")
+require("plugins.lsp-signature")
 
 -- Load development tools
 require("plugins.toggleterm")
