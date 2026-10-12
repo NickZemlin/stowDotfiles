@@ -1,0 +1,83 @@
+# Noctalia v5 config — migrated from v4 settings.json
+# Hand-written layer; GUI overrides go to ~/.local/state/noctalia/settings.toml.
+
+# ── Theme (v4 colorSchemes) ──────────────────────────────────────────
+[theme]
+mode    = "dark"          # v4 darkMode: true
+source  = "builtin"       # v4 predefinedScheme "Tokyo Night"
+builtin = "Tokyo-Night"
+# Alternative if you preferred your earlier v5 pick:
+#   source = "community"
+#   community_palette = "Tokyo Night Moon"
+
+# ── Shell (v4 general + ui) ──────────────────────────────────────────
+[shell]
+corner_radius_scale = 0.0          # v4 radiusRatio: 0 (square corners)
+font_family         = "Sans Serif" # v4 ui.fontDefault
+avatar_path         = "/home/nick/.face"  # v4 avatarImage
+telemetry_enabled   = false        # v4 telemetryEnabled: false
+settings_show_advanced = true
+
+[shell.animation]
+enabled = true        # v4 animationDisabled: false
+speed   = 1.0         # v4 animationSpeed: 1
+
+[shell.shadow]
+direction = "down_right"  # v4 shadowDirection "bottom_right"
+alpha     = 0.55
+
+[shell.panel]
+control_center_placement        = "attached"
+open_near_click_control_center  = true   # v4 controlCenter.position "close_to_bar_button"
+
+[shell.launcher]
+sort_by_usage = true      # v4 appLauncher.sortByMostUsed: true
+
+# ── Bar (v4 bar) ─────────────────────────────────────────────────────
+[bar.default]
+position           = "top"
+background_opacity = 0.93    # v4 backgroundOpacity
+radius             = 12      # v4 frameRadius
+margin_ends        = 0       # v4 marginHorizontal
+margin_edge        = 5       # v4 marginVertical
+padding            = 2       # v4 contentPadding (v5 default 14 — bump if too tight)
+widget_spacing     = 6       # v4 widgetSpacing
+capsule            = false   # v4 showCapsule: false
+start  = ["sysmon", "active_window", "media"]
+center = ["workspaces"]
+end    = ["tray", "keyboard_layout", "notifications", "battery", "volume", "control-center", "clock"]
+
+# ── Wallpaper (v4 wallpaper) ─────────────────────────────────────────
+[wallpaper]
+enabled             = true
+directory           = "/home/nick/Pictures/Wallpapers"
+fill_mode           = "crop"  # v4 fillMode
+transition          = ["fade", "wipe", "disc", "stripes", "honeycomb"]
+transition_duration = 1500
+
+[wallpaper.default]
+path = "/home/nick/Pictures/Wallpapers/tokyo-night.png"
+
+[backdrop]
+enabled = false               # v4 overviewEnabled: false
+
+# ── Notifications (v4 notifications) ─────────────────────────────────
+[notification]
+position           = "top_right"   # v4 location
+background_opacity = 1.0           # v4 backgroundOpacity
+layer              = "overlay"     # v4 overlayLayer: true
+
+[audio]
+enable_notification_sounds = false # v4 notifications.sounds.enabled: false
+
+# ── Dock ─────────────────────────────────────────────────────────────
+[dock]
+enabled = false                    # v4 dock.enabled: false
+
+# ── Location / Weather ───────────────────────────────────────────────
+[location]
+address = "Moscow"                 # v4 location.name
+
+# ── Widget overrides ─────────────────────────────────────────────────
+[widget.tray]
+drawer = true                      # v4 tray.drawerEnabled: true

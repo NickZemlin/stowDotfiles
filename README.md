@@ -12,6 +12,8 @@ yazi/       Yazi config        (.config/yazi)
 tmux/       tmux config        (.config/tmux)
 fastfetch/  fastfetch config   (.config/fastfetch)
 ghostty/    Ghostty config     (.config/ghostty)
+hypr/       Hyprland config    (.config/hypr)
+noctalia/   Noctalia v5 config (.config/noctalia/config.toml)
 ```
 
 ## Requirements
@@ -24,8 +26,9 @@ ghostty/    Ghostty config     (.config/ghostty)
 cd ~/dotfiles && ./install.sh
 ```
 
-This symlinks `~/.config/{nvim,yazi,tmux,fastfetch,ghostty}` to the corresponding
-directories here. Re-running is safe (idempotent).
+This links the packages into `~/.config/{nvim,yazi,tmux,fastfetch,ghostty,hypr,noctalia}`.
+Re-running is safe (idempotent). Back up and move existing, non-Stow-managed
+config files out of the way before installing; Stow will not overwrite them.
 
 To unlink:
 
@@ -46,3 +49,11 @@ stow -R --target="$HOME" <package>
 - `tmux` uses `caffeinate` (macOS-only); `bootstrap.sh` skips it on Linux via
   `command -v caffeinate`.
 - `tmux/plugins/` and `yazi/plugins/` are gitignored and installed at runtime.
+- `hypr` uses Hyprland's Lua configuration API. Monitor/device settings and paths
+  are specific to this machine; review them before using on another host.
+- `noctalia` tracks only the v5 `config.toml`, not legacy JSON settings, generated
+  colors, or downloaded plugins. GUI overrides live in
+  `~/.local/state/noctalia/settings.toml` and are not tracked.
+- Hyprland and Noctalia must be installed separately. The configs also reference
+  external programs and local assets (including xremap config, avatar, and
+  wallpapers); this installer only creates links.

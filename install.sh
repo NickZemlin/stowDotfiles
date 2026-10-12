@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # GNU Stow installer for this dotfiles repo.
-# Symlinks each package from ~/dotfiles into ~/.config.
+# Symlinks each package's home-directory layout into $HOME.
 #
 # Usage:
 #   ./install.sh            link packages (idempotent)
@@ -12,7 +12,7 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 TARGET="$HOME"
-PACKAGES=(nvim yazi tmux fastfetch ghostty)
+PACKAGES=(nvim yazi tmux fastfetch ghostty hypr noctalia)
 
 if ! command -v stow >/dev/null 2>&1; then
   echo "error: GNU stow is not installed." >&2

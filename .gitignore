@@ -1,2 +1,4 @@
 .DS_Store
 bootstrap.log
+noctalia/.config/noctalia/*
+!noctalia/.config/noctalia/config.toml
