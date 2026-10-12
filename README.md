@@ -51,9 +51,12 @@ stow -R --target="$HOME" <package>
 - `tmux/plugins/` and `yazi/plugins/` are gitignored and installed at runtime.
 - `hypr` uses Hyprland's Lua configuration API. Monitor/device settings and paths
   are specific to this machine; review them before using on another host.
-- `noctalia` tracks only the v5 `config.toml`, not legacy JSON settings, generated
-  colors, or downloaded plugins. GUI overrides live in
-  `~/.local/state/noctalia/settings.toml` and are not tracked.
+- `noctalia` tracks a merged v5 export in `config.toml`, including the current
+  GUI settings, not legacy JSON settings, generated colors, or downloaded plugins.
+  Future GUI changes are saved to `~/.local/state/noctalia/settings.toml` and
+  override the tracked config. To capture them, run `noctalia config export merged`
+  and save its output outside the Noctalia config directory before replacing
+  `noctalia/.config/noctalia/config.toml` (do not redirect onto a loaded config file).
 - Hyprland and Noctalia must be installed separately. The configs also reference
   external programs and local assets (including xremap config, avatar, and
   wallpapers); this installer only creates links.
